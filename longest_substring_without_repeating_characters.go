@@ -36,13 +36,13 @@ func longestSubstring(s string) int {
 	var currentSubLen int
 	var longest int
 	store := make(map[byte]int)
-	for i:=0; i < len(s); i++ {
-		if value,ok := store[s[i]]; ok && value >= currentSubLen {
+	for i := 0; i < len(s); i++ {
+		if value, ok := store[s[i]]; ok && value >= currentSubLen {
 			currentSubLen = value+1
 			currentLen = i - value
 		} else {
 			currentLen++
-			if currentLen > longest {
+			if currentLen>longest {
 				longest = currentLen
 			}
 		}
